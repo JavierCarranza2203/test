@@ -1,6 +1,7 @@
 import express from 'express';
 import pg from 'pg';
 import { config } from 'dotenv';
+import { default_type } from 'mime';
 
 config();
 const app = express();
@@ -37,3 +38,7 @@ app.post('/insert', async(req, res)=>{
 app.listen(port, (req, res)=>{
     console.log(`Servidor corriendo en: http://localhost:${port}`);
 });
+
+export default (req, res) => {
+    app(req, res);
+}
