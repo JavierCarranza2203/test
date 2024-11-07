@@ -4,7 +4,7 @@ import { config } from 'dotenv';
 
 config();
 const app = express();
-const port = 8083;
+const port = process.env.PORT || 8083;
 
 const client = new pg.Client({
     connectionString: process.env.POSTGRES_PRISMA_URL
